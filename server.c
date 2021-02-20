@@ -11,13 +11,39 @@
 #include <time.h>
 #include <string.h>
 
+
+#if defined(_MSC_VER)
+#include <direct.h>
+#define getcwd _getcwd
+#elif defined(__GNUC__)
+#include <unistd.h>
+#endif
 #define PORT 8080
-typedef enum {
-    false, true
-} bool;
+
+
+struct Klient{
+    char login[30];
+    char haslo[30];
+    char imie[30];
+    char nazwisko[30];
+    float saldo;
+
+}typedef Klient;
 
 int main() {
 
+    // Get the current working directory:
+    char* Path;
+    if( (Path=getcwd(NULL, 0)) == NULL) {
+        perror("failed to get current directory\n");
+    } else {
+        printf("%s \nLength: %zu\n", Path, strlen(Path));
+    }
+
+
+  //Create socket
+    Klient klient;
+    char user[30];
     int sockfd, ret;
     struct sockaddr_in serverAddr;
     struct sockaddr_in newAddr;
@@ -34,7 +60,6 @@ int main() {
         exit(1);
     }
     printf("[+]Server Socket is created.\n");
-
     memset(&serverAddr, '\0', sizeof(serverAddr));
     serverAddr.sin_family = AF_INET;
     serverAddr.sin_port = htons(PORT);
@@ -45,17 +70,14 @@ int main() {
         exit(1);
     }
     printf("[+]Bind to port %d\n", 8080);
-
     if (listen(sockfd, 10) == 0) {
         printf("[+]Listening....\n");
     } else {
         printf("[-]Error in binding.\n");
     }
 
-    FILE *file; // pointer to flie with logs
-    char logpath[] = "/home/student/PULX /PROJEKT_LINUX/log.txt";
 
-
+    //Customer Service
     while (newSocket) {// petla do rozdzielania nowych uzytkownikow na pojedyncze procesy
         newSocket = accept(sockfd, (struct sockaddr *) &newAddr, &addr_size);
         if (newSocket < 0) {
@@ -66,23 +88,38 @@ int main() {
 
         if ((childpid = fork()) == 0) {
             close(sockfd);
+			
+			FILE *file;//deklaracja wskaznika na plik
+            strcat(Path,"/Users/");
 
-            while (1) {//Komunikacja server-klient 
-                while (1) {
+            //Komunikacja server-klient
+            while (newSocket) {
+                while (newSocket) {
 
                     read(newSocket, buffer, sizeof(buffer));
-                    if (strcmp(buffer, "user") == 0) {
+                    strncpy(user,buffer, sizeof(user));//skopiowanie loginu od klienta
+                    file= fopen(strcat(Path,user),"r");
+                    fscanf(file,"%g %s %s %s %s",&klient.saldo,klient.imie,klient.nazwisko,klient.login,klient.haslo);
+                    printf("Saldo: %g\n",klient.saldo);
+                    printf("Imie:: %s\n",klient.imie);
+                    printf("Nazwisko: %s\n",klient.nazwisko);
+                    printf("Login: %s\n",klient.login);
+                    printf("Haslo: %s\n",klient.haslo);
+                    
+                    fclose(file);
+                    
+                    if (strcmp(buffer,klient.login) == 0) {
+                        printf("Logging: %s\n",buffer);
                         bzero(buffer, sizeof(buffer));
                         read(newSocket, buffer, sizeof(buffer));
-                        if (strcmp(buffer, "pass") == 0) {
+                        if (strcmp(buffer,klient.haslo) == 0) {
                             bzero(buffer, sizeof(buffer));
                             printf("Logged from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                             send(newSocket, Logged, strlen(Logged), 0);
                             break;
+                        } else {
+                            send(newSocket, NLogged, strlen(NLogged), 0);
                         }
-                            else{
-                                send(newSocket, NLogged, strlen(NLogged), 0);
-                            }
                     } else {
                         printf("Logging failed %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                         send(newSocket, NLogged, strlen(NLogged), 0);
@@ -96,9 +133,8 @@ int main() {
             }
         }
 
-         close(newSocket);
+        close(newSocket);
     }
 
     return 0;
 }
-

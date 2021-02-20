@@ -43,7 +43,7 @@ int main() {
     }
     printf("[+]Connected to Server.\n");
 
-
+    sleep(1);//opoznienie systemowe
     printf("WITAMY SZANOWNY KLIENCIE W BANKU SZACH-MAT BANK \n");
     printf("-----------------------------------------------------\n");
     printf("JEZELI CHCESZ ZAPOZNAC SIE INSTRUKCJA OBSLUGI\n");
