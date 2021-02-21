@@ -12,7 +12,7 @@
 
 #define PORT 8080
 #define clear() printf("\033[H\033[J")
-
+char systemCashRequest[] ="account_state";
 char imie[30];
 char nazwisko[30];
 float saldo;
@@ -67,12 +67,11 @@ int main() {
         send(clientSocket, haslo, strlen(haslo), 0);
 
         bzero(buffer, sizeof(buffer));
-       sleep(1);
+        sleep(1);
         read(clientSocket, buffer,sizeof(buffer));
 
         if ((strcmp(buffer, "Log") == 0)) {
             L=1;
-
             break;;
         }
         else{
@@ -84,22 +83,22 @@ int main() {
         }
 
     }
-read(clientSocket, imie,sizeof(imie));
-    read(clientSocket, nazwisko,sizeof(nazwisko));
-
+    send(clientSocket, systemCashRequest, strlen(systemCashRequest), 0);
+    read(clientSocket,imie,sizeof (imie));
+    read(clientSocket,nazwisko,sizeof (nazwisko));
+    read(clientSocket,&saldo,sizeof(float));
 
     clear();
-    printf("\nPOPRAWNE LOGOWANIE");
-    printf("%s\n\nUZYTKOWNIK: ",imie);
-    printf("%s",nazwisko);
+    printf("%s\n", "SZACH-MAT BANK");
+    printf("\n\nUZYTKOWNIK: %s %s",imie,nazwisko);
+    printf("\nSTAN KONTA: %g PLN",saldo);
 
-    puts("\n\nPOPRAWNE LOGOWANIE");
-    puts("\nDYSPOZYCJE:");
+    puts("\n\nDYSPOZYCJE:");
     puts("1 - STAN KONTA");
     puts("2 - WPLAC PIENIADZE");
     puts("3 - WYPLAC PIENIADZE");
-    puts("4 - WYLOGUJ SIE\n");
-    printf("WYBOR OPERACJI: ");
+    puts("logout - WYLOGUJ SIE\n");
+    puts("WYBOR OPERACJI: \n");
     
     while (1) {
         printf("$>:");

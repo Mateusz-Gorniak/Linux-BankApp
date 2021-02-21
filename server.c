@@ -148,6 +148,14 @@ int main() {
                 break;
             }
 
+            read(newSocket, buffer, sizeof(buffer));
+            if ((strcmp(buffer, "account_state") == 0)) {
+                printf("%s\n","Socket client requested account_state");
+                send(newSocket, imie, sizeof (imie), 0);
+                send(newSocket, nazwisko, sizeof (nazwisko), 0);
+                send(newSocket, &saldo, sizeof (float), 0);
+            }
+
 
             while (newSocket) {
 
