@@ -13,6 +13,10 @@
 #define PORT 8080
 #define clear() printf("\033[H\033[J")
 
+char imie[30];
+char nazwisko[30];
+float saldo;
+
 typedef enum {
     false, true
 } bool;
@@ -42,7 +46,7 @@ int main() {
         exit(1);
     }
     printf("[+]Connected to Server.\n");
-
+    clear();
     sleep(1);//opoznienie systemowe
     printf("WITAMY SZANOWNY KLIENCIE W BANKU SZACH-MAT BANK \n");
     printf("-----------------------------------------------------\n");
@@ -63,10 +67,12 @@ int main() {
         send(clientSocket, haslo, strlen(haslo), 0);
 
         bzero(buffer, sizeof(buffer));
-        sleep(1);
+       sleep(1);
         read(clientSocket, buffer,sizeof(buffer));
+
         if ((strcmp(buffer, "Log") == 0)) {
             L=1;
+
             break;;
         }
         else{
@@ -76,32 +82,41 @@ int main() {
             sleep(1);
 
         }
-        //else{break;;
 
     }
+read(clientSocket, imie,sizeof(imie));
+    read(clientSocket, nazwisko,sizeof(nazwisko));
+
 
     clear();
-    puts("\nPOPRAWNE LOGOWANIE");
+    printf("\nPOPRAWNE LOGOWANIE");
+    printf("%s\n\nUZYTKOWNIK: ",imie);
+    printf("%s",nazwisko);
+
+    puts("\n\nPOPRAWNE LOGOWANIE");
     puts("\nDYSPOZYCJE:");
     puts("1 - STAN KONTA");
     puts("2 - WPLAC PIENIADZE");
     puts("3 - WYPLAC PIENIADZE");
     puts("4 - WYLOGUJ SIE\n");
     printf("WYBOR OPERACJI: ");
-
+    
     while (1) {
         printf("$>:");
         scanf("%s", buffer);
         send(clientSocket, buffer, strlen(buffer), 0);
+        if (strcmp(buffer, "logout") == 0) {
 
-        if (strcmp(buffer, "exit") == 0) {
             close(clientSocket);
             printf("[-]Disconnected from server.\n");
             exit(1);
         }
+        bzero(buffer,sizeof(buffer));
+        read(clientSocket, buffer,sizeof(buffer));
 
-        if (read(clientSocket, buffer, sizeof(buffer)) > 0) {
-            printf("[+]Receiving data.\n");
+
+        if (strcmp(buffer, "Command no detected") == 0) {
+            printf("[?]Command not detected.\n");
         }
     }
 

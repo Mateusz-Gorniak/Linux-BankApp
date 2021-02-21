@@ -20,29 +20,27 @@
 #endif
 #define PORT 8080
 
+char login[30];
+char haslo[30];
+char imie[30];
+char nazwisko[30];
+float saldo;
+char failLogin[] = "fail";
 
-struct Klient{
-    char login[30];
-    char haslo[30];
-    char imie[30];
-    char nazwisko[30];
-    float saldo;
-
-}typedef Klient;
 
 int main() {
 
     // Get the current working directory:
-    char* Path;
-    if( (Path=getcwd(NULL, 0)) == NULL) {
+    char *Path;
+    if ((Path = getcwd(NULL, 0)) == NULL) {
         perror("failed to get current directory\n");
     } else {
         printf("%s \nLength: %zu\n", Path, strlen(Path));
     }
 
 
-  //Create socket
-    Klient klient;
+    //Create socket
+    // Klient klient;
     char user[30];
     int sockfd, ret;
     struct sockaddr_in serverAddr;
@@ -53,6 +51,7 @@ int main() {
     pid_t childpid;
     char Logged[] = "Log";
     char NLogged[] = "NLog";
+    char cmdNotDect[] = "Command no detected";
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0) {
@@ -77,8 +76,11 @@ int main() {
     }
 
 
+
     //Customer Service
     while (newSocket) {// petla do rozdzielania nowych uzytkownikow na pojedyncze procesy
+
+
         newSocket = accept(sockfd, (struct sockaddr *) &newAddr, &addr_size);
         if (newSocket < 0) {
             exit(1);
@@ -88,49 +90,85 @@ int main() {
 
         if ((childpid = fork()) == 0) {
             close(sockfd);
-			
-			FILE *file;//deklaracja wskaznika na plik
-            strcat(Path,"/Users/");
 
             //Komunikacja server-klient
             while (newSocket) {
+
+                FILE *file;//deklaracja wskaznika na plik
+                strcat(Path, "/Users/");
+                char path[50];
+                //Komunikacja server-klient
                 while (newSocket) {
 
+
                     read(newSocket, buffer, sizeof(buffer));
-                    strncpy(user,buffer, sizeof(user));//skopiowanie loginu od klienta
-                    file= fopen(strcat(Path,user),"r");
-                    fscanf(file,"%g %s %s %s %s",&klient.saldo,klient.imie,klient.nazwisko,klient.login,klient.haslo);
-                    printf("Saldo: %g\n",klient.saldo);
-                    printf("Imie:: %s\n",klient.imie);
-                    printf("Nazwisko: %s\n",klient.nazwisko);
-                    printf("Login: %s\n",klient.login);
-                    printf("Haslo: %s\n",klient.haslo);
-                    
-                    fclose(file);
-                    
-                    if (strcmp(buffer,klient.login) == 0) {
-                        printf("Logging: %s\n",buffer);
+                    printf("User input login: %s\n", buffer);
+                    strncpy(user, buffer, sizeof(user));//skopiowanie loginu od klienta
+                    sprintf(path, "%s%s", Path, user);
+                    printf("Path: %s\n", path);
+                    file = fopen(path, "r");
+                    if (file) {
+                        fscanf(file, "%g %s %s %s %s", &saldo, imie, nazwisko, login, haslo);
+                        printf("%s\n", "Otworzono plik");
+                    } else {
+                        printf("%s\n", "Nie otworzono pliku z danymi");
+                    }
+
+                    printf("Saldo: %g\n", saldo);
+                    printf("Imie:: %s\n", imie);
+                    printf("Nazwisko: %s\n", nazwisko);
+                    printf("Login: %s\n", login);
+                    printf("Haslo: %s\n", haslo);
+
+                    read(newSocket, buffer, sizeof(buffer));
+                    printf("User input password: %s\n", buffer);
+
+                    if ((strcmp(user, login) == 0) && (strcmp(buffer, haslo) == 0)) {
+                        printf("Logging: %s\n", user);
                         bzero(buffer, sizeof(buffer));
-                        read(newSocket, buffer, sizeof(buffer));
-                        if (strcmp(buffer,klient.haslo) == 0) {
-                            bzero(buffer, sizeof(buffer));
-                            printf("Logged from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
-                            send(newSocket, Logged, strlen(Logged), 0);
-                            break;
-                        } else {
-                            send(newSocket, NLogged, strlen(NLogged), 0);
-                        }
+                        // bzero(user,sizeof(user));
+                        printf("Logged from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+                        send(newSocket, Logged, strlen(Logged), 0);
+
+                        // send(newSocket, imie, strlen(imie), 0);
+                        // send(newSocket, nazwisko, strlen(nazwisko), 0);
+                        fclose(file);
+                        break;
+
                     } else {
                         printf("Logging failed %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                         send(newSocket, NLogged, strlen(NLogged), 0);
+                        bzero(buffer, sizeof(buffer));
+                        bzero(user, sizeof(user));
+                        bzero(login, sizeof(login));
+                        bzero(haslo, sizeof(haslo));
+                        bzero(haslo, sizeof(haslo));
                     }
                 }
+                break;
+            }
+
+
+            while (newSocket) {
+
                 read(newSocket, buffer, sizeof(buffer));
-                if ((strcmp(buffer, "exit") == 0)) {
+
+                if ((strcmp(buffer, "logout") == 0)) {
                     printf("Disconnected from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                     break;
+                } else {
+                    printf("%s\n", "Command not detected");
+                    send(newSocket, cmdNotDect, strlen(cmdNotDect), 0);
                 }
+                bzero(buffer, sizeof(buffer));
+
             }
+            //read(newSocket, buffer, sizeof(buffer));
+            //if ((strcmp(buffer, "logout") == 0)) {
+            //    printf("Disconnected from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+            //    break;
+            //}
+
         }
 
         close(newSocket);
