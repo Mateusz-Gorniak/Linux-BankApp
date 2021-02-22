@@ -22,8 +22,8 @@ typedef enum {
 } bool;
 
 int main() {
-    int L=0;
-    int clientSocket, ret;
+    int L=0; // flaga logged
+    int clientSocket, ret;//uchwyt do socketa
     struct sockaddr_in serverAddr;
     char buffer[1024];
     bool logged = false;
@@ -35,10 +35,10 @@ int main() {
     }
     printf("[+]Client Socket is created.\n");
 
-    memset(&serverAddr, '\0', sizeof(serverAddr));
+    //memset(&serverAddr, '\0', sizeof(serverAddr));
     serverAddr.sin_family = AF_INET;
     serverAddr.sin_port = htons(PORT);
-    serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    serverAddr.sin_addr.s_addr = inet_addr("192.168.1.23");
 
     ret = connect(clientSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr));
     if (ret < 0) {
@@ -105,15 +105,12 @@ int main() {
         scanf("%s", buffer);
         send(clientSocket, buffer, strlen(buffer), 0);
         if (strcmp(buffer, "logout") == 0) {
-
             close(clientSocket);
             printf("[-]Disconnected from server.\n");
             exit(1);
         }
         bzero(buffer,sizeof(buffer));
         read(clientSocket, buffer,sizeof(buffer));
-
-
         if (strcmp(buffer, "Command no detected") == 0) {
             printf("[?]Command not detected.\n");
         }
