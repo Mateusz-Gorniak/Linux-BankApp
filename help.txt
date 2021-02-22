@@ -1,0 +1,25 @@
+Pomoc uzytkownika 
+
+1. Po zalogowaniu w aplikacji klienckiej widnieje imie i nazwisko uzytkownika 
+oraz stan konta.
+2. Aby wprowadzic jakies zmiany na koncie nalezy podac po znaku zachety 
+$> odpowiednia instrukcje.Dyspozycje jakie mozna wykonac w trakcie aktywnej sesji: 
+
+1 - STAN KONTA;
+2 - WPLAC PIENIADZE;
+3 - WYPLAC PIENIADZE
+help - POMOC UZYTKOWNIKA;
+exit - WYLOGUJ SIE;
+
+Nie mozna wyplacic wiecej srodkow niz jest to mozliwe. 
+Po wplaceniu pieniedzy wystarczy wybrac polecenie 1, wowczas stan konta 
+zostanie automatycznie zaktualizowany.
+Aby wylogowac sie nalezy po znaku zachety wpisac polecenie $>exit. 
+
+W razie problemow z logowaniem lub w trakcie korzystania z aplikacji prosze
+skontaktowac sie z administratorem:
+
+Mateusz Gorniak
+email: mateusz.gorniak@student.wat.edu.pl 
+nr tel: 555 000 222 
+ 

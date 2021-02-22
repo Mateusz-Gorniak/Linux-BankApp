@@ -1,16 +1,67 @@
 
-2021-02-22 12:42:16 START PRACY SERVERA
+2021-02-22 21:17:36 START PRACY SERVERA
 
-2021-02-22 12:42:16 KONIEC PRACY SERVERA
+2021-02-22 21:17:36 Nawiazanie polaczenia z klientem: 192.168.1.23 57458
+2021-02-22 21:17:36User input login: user1
+2021-02-22 21:17:36User input password: pass1
+2021-02-22 21:17:36 Logging user: user1
+2021-02-22 21:17:36 Logged from 192.168.1.23:57458
 
-2021-02-22 12:44:21 START PRACY SERVERA
+2021-02-22 21:17:36 user1 uruchomil pomoc: 192.168.1.23 57458
 
-2021-02-22 12:44:21 KONIEC PRACY SERVERA
+2021-02-22 21:17:36 Wylogowano user1: 192.168.1.23 57458
 
-2021-02-22 12:44:21 KONIEC PRACY SERVERA
+2021-02-22 21:17:36 KONIEC PRACY SERVERA
 
-2021-02-22 12:58:40 START PRACY SERVERA
+2021-02-22 21:19:13 START PRACY SERVERA
 
-2021-02-22 14:51:29 START PRACY SERVERA
+2021-02-22 21:19:13 Nawiazanie polaczenia z klientem: 192.168.1.23 57460
+2021-02-22 21:19:13User input login: user6
+2021-02-22 21:19:13User input password: pass5
+2021-02-22 21:19:13 Logging failed 192.168.1.23:57460
+2021-02-22 21:19:13User input login: user6
+2021-02-22 21:19:13User input password: pass6
+2021-02-22 21:19:13 Logging user: user6
+2021-02-22 21:19:13 Logged from 192.168.1.23:57460
 
-2021-02-22 14:53:06 START PRACY SERVERA
+2021-02-22 21:21:05 START PRACY SERVERA
+
+2021-02-22 21:21:05 Nawiazanie polaczenia z klientem: 192.168.1.23 57462
+2021-02-22 21:21:05User input login: user4
+2021-02-22 21:21:05User input password: pass4
+2021-02-22 21:21:05 Logging user: user4
+2021-02-22 21:21:05 Logged from 192.168.1.23:57462
+
+2021-02-22 21:21:05 user4 uruchomil pomoc: 192.168.1.23 57462
+
+2021-02-22 21:21:05 Wylogowano user4: 192.168.1.23 57462
+
+2021-02-22 21:23:44 START PRACY SERVERA
+
+2021-02-22 21:23:44 Nawiazanie polaczenia z klientem: 192.168.1.23 57464
+2021-02-22 21:23:44 User input login: user1
+2021-02-22 21:23:44 User input password: pass1
+2021-02-22 21:23:44 Logging user: user1
+ 2021-02-22 21:23:44 Logged from 192.168.1.23:57464
+
+2021-02-22 21:23:44 Nawiazanie polaczenia z klientem: 192.168.1.23 57466
+2021-02-22 21:23:44 User input login: user3
+2021-02-22 21:23:44 User input password: pass3
+2021-02-22 21:23:44 Logging user: user3
+ 2021-02-22 21:23:44 Logged from 192.168.1.23:57466
+
+2021-02-22 21:23:44 Wylogowano user3: 192.168.1.23 57466
+
+2021-02-22 21:23:44 KONIEC PRACY SERVERA
+
+2021-02-22 21:29:56 START PRACY SERVERA
+
+2021-02-22 21:29:56 Nawiazanie polaczenia z klientem: 192.168.1.23 57468
+2021-02-22 21:29:56 User input login: user2
+2021-02-22 21:29:56 User input password: pass2
+2021-02-22 21:29:56 Logging user: user2
+ 2021-02-22 21:29:56 Logged from 192.168.1.23:57468
+
+2021-02-22 21:29:56 Wylogowano user2: 192.168.1.23 57468
+
+2021-02-22 21:29:56 KONIEC PRACY SERVERA

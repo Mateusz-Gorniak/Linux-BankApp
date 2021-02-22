@@ -20,6 +20,7 @@
 #endif
 #define PORT 8080
 
+#define clear() printf("\033[H\033[J")//czyszczenie ekranu
 
 int main() {
 
@@ -35,7 +36,8 @@ int main() {
     char Logged[] = "Log";
     char NLogged[] = "NLog";
     char cmdNotDect[] = "Command no detected";
-
+    char cmdSucces[] = "Operation was successful";
+    char cmdFailed[] = "Operation failed";
 
     // Get the current working directory:
     char *Path;//wskznik na sciezke katalogu w ktorym pracuje server
@@ -61,8 +63,8 @@ int main() {
     dataclock = localtime(&myclock);
     strftime(mytime,1000,"%Y-%m-%d %H:%M:%S", dataclock);
     fprintf(logfile,"\n%s START PRACY SERVERA\n",mytime);
-    //fprintf(logfile,"\n%sNawiazanie polaczenia z klientem: %s %d\n",mytime,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
     fclose(logfile);
+    clear();
 
 
     //Create socket
@@ -105,7 +107,6 @@ int main() {
     }
 
 
-
     //Customer Service
     while (newSocket) {// petla do rozdzielania nowych uzytkownikow na pojedyncze procesy
 
@@ -116,6 +117,9 @@ int main() {
         }
         printf("Connection accepted from %s:%d\n",inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
 
+        logfile = fopen(logpath,"a");
+        fprintf(logfile,"\n%s Nawiazanie polaczenia z klientem: %s %d\n",mytime,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+        fclose(logfile);
 
         if ((childpid = fork()) == 0) {
             close(sockfd);
@@ -123,6 +127,7 @@ int main() {
             //Petla logowania
             while (newSocket) {
 
+                logfile = fopen(logpath,"a");
                 FILE *file;//deklaracja wskaznika na plik z danymi klienta
                 strcat(Path, "/Users/");
                 char path[50];
@@ -132,31 +137,34 @@ int main() {
 
                     read(newSocket, buffer, sizeof(buffer));
                     printf("User input login: %s\n", buffer);
+                    fprintf(logfile,"%s User input login: %s\n",mytime,buffer);
                     strncpy(user, buffer, sizeof(user));//skopiowanie loginu od klienta
                     sprintf(path, "%s%s", Path, user);
                     printf("Path: %s\n", path);
                     file = fopen(path, "r");
                     if (file) {
                         fscanf(file, "%g %s %s %s %s", &saldo, imie, nazwisko, login, haslo);
-                        printf("%s\n", "Otworzono plik");
+                        printf("%s\n", "User file opened");
                     } else {
-                        printf("%s\n", "Nie otworzono pliku z danymi");
+                        printf("%s\n", "User file not opened");
                     }
-
+/*
                     printf("Saldo: %g\n", saldo);
                     printf("Imie:: %s\n", imie);
                     printf("Nazwisko: %s\n", nazwisko);
                     printf("Login: %s\n", login);
                     printf("Haslo: %s\n", haslo);
-
+*/
                     read(newSocket, buffer, sizeof(buffer));
                     printf("User input password: %s\n", buffer);
-
+                    fprintf(logfile,"%s User input password: %s\n",mytime,buffer);
                     if ((strcmp(user, login) == 0) && (strcmp(buffer, haslo) == 0)) {
                         printf("Logging: %s\n", user);
+                        fprintf(logfile,"%s Logging user: %s\n",mytime,user);
                         bzero(buffer, sizeof(buffer));
                         // bzero(user,sizeof(user));
-                        printf("Logged from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+                        printf(" %s Logged %s from %s:%d\n",mytime,user,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+                        fprintf(logfile," %s Logged from %s:%d\n",mytime,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                         send(newSocket, Logged, strlen(Logged), 0);
 
                         // send(newSocket, imie, strlen(imie), 0);
@@ -166,6 +174,7 @@ int main() {
 
                     } else {
                         printf("Logging failed %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+                        fprintf(logfile,"%s Logging failed %s:%d\n",mytime,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                         send(newSocket, NLogged, strlen(NLogged), 0);
                         bzero(buffer, sizeof(buffer));
                         bzero(user, sizeof(user));
@@ -176,6 +185,9 @@ int main() {
                 }
                 break;
             }
+            fclose(logfile);
+
+
             //wyslanie aplikcji klienta stanu konta po zalogowaniu
             read(newSocket, buffer, sizeof(buffer));
             if ((strcmp(buffer, "account_state") == 0)) {
@@ -184,35 +196,31 @@ int main() {
                 send(newSocket, nazwisko, sizeof (nazwisko), 0);
                 send(newSocket, &saldo, sizeof (float), 0);
             }
-
+            bzero(buffer, sizeof(buffer));
+            logfile = fopen(logpath,"a");
             // Petla obslugi polecen klienta
             while (newSocket) {
 
                 read(newSocket, buffer, sizeof(buffer));
 
-                if ((strcmp(buffer, "logout") == 0)) {
-                    printf("Logged out from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+                //bzero(buffer, sizeof(buffer));
+                if((strcmp(buffer,"help") == 0)) {
+                    printf("Client asked for help %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+                    fprintf(logfile, "\n%s %s uruchomil pomoc: %s %d\n", mytime,user, inet_ntoa(newAddr.sin_addr),
+                            ntohs(newAddr.sin_port));
+                    send(newSocket, cmdSucces, strlen(cmdSucces), 0);
+                }
+                if ((strcmp(buffer,"exit") == 0)) {
+                    printf("%s %s Logged out from %s:%d\n",mytime,user,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
+                    fprintf(logfile,"\n%s Wylogowano %s: %s %d\n",mytime,user,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                     break;
-                }
-                else if ((strcmp(buffer, "1") == 0)){
-
-                }
-
-                else if ((strcmp(buffer, "2") == 0)){
-
-                }
-                else if ((strcmp(buffer, "3") == 0)){
-
-
                 }
                 else {
                     printf("%s\n", "Command not detected");
                     send(newSocket, cmdNotDect, strlen(cmdNotDect), 0);
                 }
-                bzero(buffer, sizeof(buffer));
+
             }
-
-
             if (read(newSocket, buffer, sizeof(buffer)) < 0) {
                 printf("Disconected from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
                 break;
@@ -223,10 +231,7 @@ int main() {
             //    printf("Disconnected from %s:%d\n", inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
             //    break;
             //}
-
-            logfile = fopen(logpath,"a");
             fprintf(logfile,"\n%s KONIEC PRACY SERVERA\n",mytime);
-            //fprintf(logfile,"\n%sNawiazanie polaczenia z klientem: %s %d\n",mytime,inet_ntoa(newAddr.sin_addr), ntohs(newAddr.sin_port));
             fclose(logfile);
         }
 

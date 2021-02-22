@@ -10,23 +10,45 @@
 #include <unistd.h>
 
 
+#if defined(_MSC_VER)
+#include <direct.h>
+#define getcwd _getcwd
+#elif defined(__GNUC__)
+#include <unistd.h>
+#endif
+
 #define PORT 8080
 #define clear() printf("\033[H\033[J")
-char systemCashRequest[] ="account_state";
-char imie[30];
-char nazwisko[30];
-float saldo;
 
-typedef enum {
-    false, true
-} bool;
+//typedef enum {
+//    false, true
+//} bool;
 
 int main() {
+
+    //zmienne pomocnicze
+    char systemCashRequest[] ="account_state";
+    char imie[30];
+    char nazwisko[30];
+    float saldo;
+    char path[40];
+    FILE *file;
+    char helpbuffer[255];
+
+    // get curret working directory
+    char *Path;//wskznik na sciezke katalogu w ktorym pracuje server
+    if ((Path = getcwd(NULL, 0)) == NULL) {
+        perror("failed to get current directory\n");
+    } else {
+        printf("%s \nLength: %zu\n", Path, strlen(Path));
+    }
+
+    //socket program
     int L=0; // flaga logged
     int clientSocket, ret;//uchwyt do socketa
     struct sockaddr_in serverAddr;
     char buffer[1024];
-    bool logged = false;
+    
 
     clientSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (clientSocket < 0) {
@@ -93,27 +115,48 @@ int main() {
     printf("\n\nUZYTKOWNIK: %s %s",imie,nazwisko);
     printf("\nSTAN KONTA: %g PLN",saldo);
 
-    puts("\n\nDYSPOZYCJE:");
+    puts("\nDYSPOZYCJE:");
     puts("1 - STAN KONTA");
     puts("2 - WPLAC PIENIADZE");
     puts("3 - WYPLAC PIENIADZE");
-    puts("logout - WYLOGUJ SIE\n");
+    puts("help - POMOC UZYTKOWNIKA");
+    puts("exit - WYLOGUJ SIE\n");
     puts("WYBOR OPERACJI: \n");
     
-    while (1) {
+    while (clientSocket) {
         printf("$>:");
         scanf("%s", buffer);
         send(clientSocket, buffer, strlen(buffer), 0);
-        if (strcmp(buffer, "logout") == 0) {
+        if (strcmp(buffer, "exit") == 0) {
             close(clientSocket);
             printf("[-]Disconnected from server.\n");
             exit(1);
         }
+        if(strcmp(buffer,"help") == 0){
+            sprintf(path, "%s%s", Path,"/help.txt");
+            //printf("%s",path);
+            //printf("%s",Path);
+            file=fopen(path,"r");
+            if (file) {
+                while(fgets(helpbuffer,255,file)>0) {
+                    printf("%s", helpbuffer);
+                }
+            } else {
+                printf("%s\n", "Nie otworzono pliku z pomoca");
+            }
+            printf("\n\n");
+            fclose(file);
+            bzero(helpbuffer,sizeof(helpbuffer));
+        }
         bzero(buffer,sizeof(buffer));
         read(clientSocket, buffer,sizeof(buffer));
+        if (strcmp(buffer, "Operation was successful") == 0) {
+            printf("[+]Operation was successful.\n");
+        }
         if (strcmp(buffer, "Command no detected") == 0) {
             printf("[?]Command not detected.\n");
         }
+
     }
 
     close(clientSocket);
