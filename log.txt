@@ -65,3 +65,638 @@
 2021-02-22 21:29:56 Wylogowano user2: 192.168.1.23 57468
 
 2021-02-22 21:29:56 KONIEC PRACY SERVERA
+
+2021-02-22 23:18:56 START PRACY SERVERA
+
+2021-02-22 23:19:30 START PRACY SERVERA
+
+2021-02-22 23:20:00 START PRACY SERVERA
+
+2021-02-22 23:20:34 START PRACY SERVERA
+
+2021-02-22 23:20:59 START PRACY SERVERA
+
+2021-02-22 23:21:07 START PRACY SERVERA
+
+2021-02-22 23:21:11 START PRACY SERVERA
+
+2021-02-22 23:21:31 START PRACY SERVERA
+
+2021-02-22 23:22:22 START PRACY SERVERA
+
+2021-02-22 23:25:47 START PRACY SERVERA
+
+2021-02-22 23:27:38 START PRACY SERVERA
+
+2021-02-22 23:32:29 START PRACY SERVERA
+
+2021-02-22 23:33:03 START PRACY SERVERA
+
+2021-02-22 23:33:17 START PRACY SERVERA
+
+2021-02-22 23:33:38 START PRACY SERVERA
+
+2021-02-22 23:34:14 START PRACY SERVERA
+
+2021-02-22 23:34:49 START PRACY SERVERA
+
+2021-02-22 23:37:27 START PRACY SERVERA
+
+2021-02-22 23:39:40 START PRACY SERVERA
+
+2021-02-22 23:39:40 Nawiazanie polaczenia z klientem: 192.168.1.23 57984
+2021-02-22 23:39:40 User input login: user3
+2021-02-22 23:39:40 User input password: pass3
+2021-02-22 23:39:40 Logging user: user3
+ 2021-02-22 23:39:40 Logged from 192.168.1.23:57984
+
+2021-02-22 23:39:40 user3 uruchomil pomoc: 192.168.1.23 57984
+
+2021-02-22 23:39:40 Wylogowano user3: 192.168.1.23 57984
+
+2021-02-22 23:39:40 KONIEC PRACY SERVERA
+
+2021-02-22 23:43:06 START PRACY SERVERA
+
+2021-02-22 23:46:57 START PRACY SERVERA
+
+2021-02-22 23:46:57 Nawiazanie polaczenia z klientem: 192.168.1.23 57990
+2021-02-22 23:46:57 User input login: user1
+2021-02-22 23:46:57 User input password: pass1
+2021-02-22 23:46:57 Logging user: user1
+ 2021-02-22 23:46:57 Logged from 192.168.1.23:57990
+
+2021-02-22 23:49:50 START PRACY SERVERA
+
+2021-02-22 23:49:50 Nawiazanie polaczenia z klientem: 192.168.1.23 57992
+2021-02-22 23:49:50 User input login: user3
+2021-02-22 23:49:50 User input password: pass3
+2021-02-22 23:49:50 Logging user: user3
+ 2021-02-22 23:49:50 Logged from 192.168.1.23:57992
+
+2021-02-22 23:51:02 START PRACY SERVERA
+
+2021-02-22 23:51:38 START PRACY SERVERA
+
+2021-02-22 23:52:17 START PRACY SERVERA
+
+2021-02-22 23:52:28 START PRACY SERVERA
+
+2021-02-22 23:52:31 START PRACY SERVERA
+
+2021-02-22 23:52:34 START PRACY SERVERA
+
+2021-02-22 23:52:46 START PRACY SERVERA
+
+2021-02-22 23:54:25 START PRACY SERVERA
+
+2021-02-22 23:54:25 Nawiazanie polaczenia z klientem: 192.168.1.23 58002
+
+2021-02-22 23:55:18 START PRACY SERVERA
+
+2021-02-22 23:57:30 START PRACY SERVERA
+
+2021-02-23 00:05:33 START PRACY SERVERA
+
+2021-02-23 00:06:43 START PRACY SERVERA
+
+2021-02-23 00:06:43 Nawiazanie polaczenia z klientem: 192.168.1.23 58020
+2021-02-23 00:06:43 User input login: user1
+2021-02-23 00:06:43 User input password: pass1
+2021-02-23 00:06:43 Logging failed 192.168.1.23:58020
+2021-02-23 00:06:43 User input login: user1
+2021-02-23 00:06:43 User input password: pass1
+2021-02-23 00:06:43 Logging failed 192.168.1.23:58020
+2021-02-23 00:06:43 User input login: 
+2021-02-23 00:06:43 User input password: 
+2021-02-23 00:06:43 Logging user: 
+ 2021-02-23 00:06:43 Logged from 192.168.1.23:58020
+
+2021-02-23 00:08:29 START PRACY SERVERA
+
+2021-02-23 00:08:29 Nawiazanie polaczenia z klientem: 192.168.1.23 58030
+2021-02-23 00:08:29 User input login: user1
+2021-02-23 00:08:29 User input password: pass1
+2021-02-23 00:08:29 Logging failed 192.168.1.23:58030
+2021-02-23 00:08:29 User input login: user1
+2021-02-23 00:08:29 User input password: pass1
+2021-02-23 00:08:29 Logging failed 192.168.1.23:58030
+2021-02-23 00:08:29 User input login: 
+2021-02-23 00:08:29 User input password: 
+2021-02-23 00:08:29 Logging user: 
+ 2021-02-23 00:08:29 Logged from 192.168.1.23:58030
+
+2021-02-23 00:11:09 START PRACY SERVERA
+
+2021-02-23 00:11:09 Nawiazanie polaczenia z klientem: 192.168.1.23 58032
+2021-02-23 00:11:09 User input login: user1
+2021-02-23 00:11:09 User input password: pass1
+2021-02-23 00:11:09 Logging user: user1
+ 2021-02-23 00:11:09 Logged from 192.168.1.23:58032
+
+2021-02-23 00:11:09 user1 uruchomil pomoc: 192.168.1.23 58032
+
+2021-02-23 00:11:09 Wylogowano user1: 192.168.1.23 58032
+
+2021-02-23 00:13:24 START PRACY SERVERA
+
+2021-02-23 00:13:35 START PRACY SERVERA
+
+2021-02-23 00:13:39 START PRACY SERVERA
+
+2021-02-23 00:13:39 Nawiazanie polaczenia z klientem: 192.168.1.23 58034
+2021-02-23 00:13:39 User input login: user1
+2021-02-23 00:13:39 User input password: pass1
+2021-02-23 00:13:39 Logging user: user1
+ 2021-02-23 00:13:39 Logged from 192.168.1.23:58034
+
+2021-02-23 00:13:39 Wylogowano user1: 192.168.1.23 58034
+
+2021-02-23 00:13:39 KONIEC PRACY SERVERA
+
+2021-02-23 00:15:04 START PRACY SERVERA
+
+2021-02-23 00:15:04 Nawiazanie polaczenia z klientem: 192.168.1.23 58036
+2021-02-23 00:15:04 User input login: user1
+2021-02-23 00:15:04 User input password: pass1
+2021-02-23 00:15:04 Logging user: user1
+ 2021-02-23 00:15:04 Logged from 192.168.1.23:58036
+
+2021-02-23 00:15:04 Wylogowano user1: 192.168.1.23 58036
+
+2021-02-23 00:15:04 KONIEC PRACY SERVERA
+
+2021-02-23 00:16:54 START PRACY SERVERA
+
+2021-02-23 00:17:16 START PRACY SERVERA
+
+2021-02-23 00:19:30 START PRACY SERVERA
+
+2021-02-23 00:19:30 Nawiazanie polaczenia z klientem: 192.168.1.23 58042
+2021-02-23 00:19:30 User input login: user1
+2021-02-23 00:19:30 User input password: pass1
+2021-02-23 00:19:30 Logging user: user1
+ 2021-02-23 00:19:30 Logged from 192.168.1.23:58042
+
+2021-02-23 00:19:30 user1 Klient chce dokonac wplaty: 192.168.1.23 58042
+
+2021-02-23 00:19:30 Wylogowano user1: 192.168.1.23 58042
+
+2021-02-23 00:19:30 KONIEC PRACY SERVERA
+
+2021-02-23 00:20:33 START PRACY SERVERA
+
+2021-02-23 00:20:33 Nawiazanie polaczenia z klientem: 192.168.1.23 58044
+
+2021-02-23 00:22:20 START PRACY SERVERA
+
+2021-02-23 00:22:20 Nawiazanie polaczenia z klientem: 192.168.1.23 58046
+2021-02-23 00:22:20 User input login: user1
+2021-02-23 00:22:20 User input password: pass1
+2021-02-23 00:22:20 Logging user: user1
+ 2021-02-23 00:22:20 Logged from 192.168.1.23:58046
+
+2021-02-23 00:22:20 user1 Klient chce dokonac wplaty: 192.168.1.23 58046
+
+2021-02-23 00:22:20 Wylogowano user1: 192.168.1.23 58046
+
+2021-02-23 00:22:20 KONIEC PRACY SERVERA
+
+2021-02-23 00:22:20 Nawiazanie polaczenia z klientem: 192.168.1.23 58058
+
+2021-02-23 00:30:56 START PRACY SERVERA
+
+2021-02-23 00:30:56 Nawiazanie polaczenia z klientem: 192.168.1.23 58060
+2021-02-23 00:30:56 User input login: user1
+2021-02-23 00:30:56 User input password: pass1
+2021-02-23 00:30:56 Logging user: user1
+ 2021-02-23 00:30:56 Logged from 192.168.1.23:58060
+
+2021-02-23 00:32:16 START PRACY SERVERA
+
+2021-02-23 00:32:16 Nawiazanie polaczenia z klientem: 192.168.1.23 58062
+2021-02-23 00:32:16 User input login: user3
+2021-02-23 00:32:16 User input password: pass3
+2021-02-23 00:32:16 Logging user: user3
+ 2021-02-23 00:32:16 Logged from 192.168.1.23:58062
+
+2021-02-23 00:32:53 START PRACY SERVERA
+
+2021-02-23 00:32:53 Nawiazanie polaczenia z klientem: 192.168.1.23 58064
+2021-02-23 00:32:53 User input login: user3
+2021-02-23 00:32:53 User input password: pass3
+2021-02-23 00:32:53 Logging user: user3
+ 2021-02-23 00:32:53 Logged from 192.168.1.23:58064
+
+2021-02-23 00:34:40 START PRACY SERVERA
+
+2021-02-23 00:35:19 START PRACY SERVERA
+
+2021-02-23 00:35:51 START PRACY SERVERA
+
+2021-02-23 00:36:09 START PRACY SERVERA
+
+2021-02-23 00:36:19 START PRACY SERVERA
+
+2021-02-23 00:36:48 START PRACY SERVERA
+
+2021-02-23 00:37:43 START PRACY SERVERA
+
+2021-02-23 00:37:56 START PRACY SERVERA
+
+2021-02-23 00:38:00 START PRACY SERVERA
+
+2021-02-23 00:38:10 START PRACY SERVERA
+
+2021-02-23 00:38:38 START PRACY SERVERA
+
+2021-02-23 00:39:21 START PRACY SERVERA
+
+2021-02-23 00:39:21 Nawiazanie polaczenia z klientem: 192.168.1.23 58082
+2021-02-23 00:39:21 User input login: user1
+2021-02-23 00:39:21 User input password: pass1
+2021-02-23 00:39:21 Logging user: user1
+ 2021-02-23 00:39:21 Logged from 192.168.1.23:58082
+
+2021-02-23 00:39:21 user1 uruchomil pomoc: 192.168.1.23 58082
+
+2021-02-23 00:39:21 Wylogowano user1: 192.168.1.23 58082
+
+2021-02-23 00:43:48 START PRACY SERVERA
+
+2021-02-23 00:44:13 START PRACY SERVERA
+
+2021-02-23 00:44:39 START PRACY SERVERA
+
+2021-02-23 00:45:11 START PRACY SERVERA
+
+2021-02-23 00:45:11 Nawiazanie polaczenia z klientem: 192.168.1.23 58086
+2021-02-23 00:45:11 User input login: user1
+2021-02-23 00:45:11 User input password: pass1
+2021-02-23 00:45:11 Logging user: user1
+ 2021-02-23 00:45:11 Logged from 192.168.1.23:58086
+
+2021-02-23 00:50:45 START PRACY SERVERA
+
+2021-02-23 00:50:45 Nawiazanie polaczenia z klientem: 79.127.0.0 58176
+
+2021-02-23 00:51:13 START PRACY SERVERA
+
+2021-02-23 00:51:17 START PRACY SERVERA
+
+2021-02-23 00:51:23 START PRACY SERVERA
+
+2021-02-23 00:52:00 START PRACY SERVERA
+
+2021-02-23 00:52:00 Nawiazanie polaczenia z klientem: 130.127.0.0 19882
+2021-02-23 00:52:00 User input login: user1
+2021-02-23 00:52:00 User input password: pass1
+2021-02-23 00:52:00 Logging user: user1
+ 2021-02-23 00:52:00 Logged from 192.168.1.23:58092
+
+2021-02-23 00:53:00 START PRACY SERVERA
+
+2021-02-23 00:53:00 Nawiazanie polaczenia z klientem: 187.127.0.0 47082
+
+2021-02-23 00:54:14 START PRACY SERVERA
+
+2021-02-23 00:54:14 Nawiazanie polaczenia z klientem: 19.127.0.0 59671
+
+2021-02-23 00:56:02 START PRACY SERVERA
+
+2021-02-23 00:56:02 Nawiazanie polaczenia z klientem: 202.127.0.0 36054
+
+2021-02-23 00:57:06 START PRACY SERVERA
+
+2021-02-23 00:57:57 START PRACY SERVERA
+
+2021-02-23 00:57:57 Nawiazanie polaczenia z klientem: 92.127.0.0 13064
+2021-02-23 00:57:57 User input login: user1
+2021-02-23 00:57:57 User input password: pass2
+2021-02-23 00:57:57 Logging failed 192.168.1.23:58118
+2021-02-23 00:57:57 User input login: user2
+2021-02-23 00:57:57 User input password: pass2
+2021-02-23 00:57:57 Logging user: user2
+ 2021-02-23 00:57:57 Logged from 192.168.1.23:58118
+
+2021-02-23 00:58:58 START PRACY SERVERA
+
+2021-02-23 00:58:58 Nawiazanie polaczenia z klientem: 225.127.0.0 60778
+2021-02-23 00:58:58 User input login: user1
+2021-02-23 00:58:58 User input password: pass1
+2021-02-23 00:58:58 Logging user: user1
+ 2021-02-23 00:58:58 Logged from 192.168.1.23:58124
+2021-02-23 00:58:58 User input login: user3
+2021-02-23 00:58:58 User input password: pass3
+2021-02-23 00:58:58 Logging user: user3
+ 2021-02-23 00:58:58 Logged from 192.168.1.23:58126
+
+2021-02-23 01:02:01 START PRACY SERVERA
+
+2021-02-23 01:02:01 Nawiazanie polaczenia z klientem: 140.127.0.0 42139
+2021-02-23 01:02:01 User input login: user1
+2021-02-23 01:02:01 User input password: pass1
+2021-02-23 01:02:01 Logging user: user1
+ 2021-02-23 01:02:01 Logged from 192.168.1.23:58128
+
+2021-02-23 01:03:19 START PRACY SERVERA
+
+2021-02-23 01:03:19 Nawiazanie polaczenia z klientem: 182.127.0.0 11475
+2021-02-23 01:03:19 User input login: user1
+2021-02-23 01:03:19 User input password: pass1
+2021-02-23 01:03:19 Logging user: user1
+ 2021-02-23 01:03:19 Logged from 192.168.1.23:58130
+
+2021-02-23 01:13:45 START PRACY SERVERA
+
+2021-02-23 01:13:45 Nawiazanie polaczenia z klientem: 8.127.0.0 57096
+2021-02-23 01:13:45 User input login: user1
+2021-02-23 01:13:45 User input password: pass1
+2021-02-23 01:13:45 Logging user: user1
+ 2021-02-23 01:13:45 Logged from 192.168.1.23:58134
+
+2021-02-23 01:15:42 START PRACY SERVERA
+
+2021-02-23 01:15:42 Nawiazanie polaczenia z klientem: 249.127.0.0 54923
+2021-02-23 01:15:42 User input login: user1
+2021-02-23 01:15:42 User input password: pass1
+2021-02-23 01:15:42 Logging user: user1
+ 2021-02-23 01:15:42 Logged from 192.168.1.23:58136
+
+2021-02-23 01:18:10 START PRACY SERVERA
+
+2021-02-23 01:18:10 Nawiazanie polaczenia z klientem: 74.127.0.0 32248
+2021-02-23 01:18:10 User input login: user1
+2021-02-23 01:18:10 User input password: pass1
+2021-02-23 01:18:10 Logging user: user1
+ 2021-02-23 01:18:10 Logged from 192.168.1.23:58142
+
+2021-02-23 01:23:02 START PRACY SERVERA
+
+2021-02-23 01:23:02 Nawiazanie polaczenia z klientem: 117.127.0.0 21380
+2021-02-23 01:23:02 User input login: user1
+2021-02-23 01:23:02 User input password: pass1
+2021-02-23 01:23:02 Logging user: user1
+ 2021-02-23 01:23:02 Logged from 192.168.1.23:58148
+
+2021-02-23 01:24:17 START PRACY SERVERA
+
+2021-02-23 01:24:17 Nawiazanie polaczenia z klientem: 19.127.0.0 27745
+2021-02-23 01:24:17 User input login: user1
+2021-02-23 01:24:17 User input password: pass1
+2021-02-23 01:24:17 Logging user: user1
+ 2021-02-23 01:24:17 Logged from 192.168.1.23:58154
+
+2021-02-23 01:25:58 START PRACY SERVERA
+
+2021-02-23 01:25:58 Nawiazanie polaczenia z klientem: 223.127.0.0 53296
+2021-02-23 01:25:58 User input login: user1
+2021-02-23 01:25:58 User input password: pass1
+2021-02-23 01:25:58 Logging user: user1
+ 2021-02-23 01:25:58 Logged from 192.168.1.23:58158
+
+2021-02-23 01:28:10 START PRACY SERVERA
+
+2021-02-23 01:28:15 START PRACY SERVERA
+
+2021-02-23 01:28:15 Nawiazanie polaczenia z klientem: 18.127.0.0 1267
+2021-02-23 01:28:15 User input login: user1
+2021-02-23 01:28:15 User input password: pass1
+2021-02-23 01:28:15 Logging user: user1
+ 2021-02-23 01:28:15 Logged from 192.168.1.23:58162
+
+2021-02-23 01:32:14 START PRACY SERVERA
+
+2021-02-23 01:32:14 Nawiazanie polaczenia z klientem: 188.127.0.0 36220
+2021-02-23 01:32:14 User input login: user1
+2021-02-23 01:32:14 User input password: pass1
+2021-02-23 01:32:14 Logging user: user1
+ 2021-02-23 01:32:14 Logged from 192.168.1.23:58166
+
+2021-02-23 01:34:55 START PRACY SERVERA
+
+2021-02-23 01:34:55 Nawiazanie polaczenia z klientem: 182.127.0.0 24123
+2021-02-23 01:34:55 User input login: user1
+2021-02-23 01:34:55 User input password: pass1
+2021-02-23 01:34:55 Logging user: user1
+ 2021-02-23 01:34:55 Logged from 192.168.1.23:58168
+
+2021-02-23 01:34:55 user1 uruchomil pomoc: 192.168.1.23 58168
+
+2021-02-23 01:34:55 Wylogowano user1: 192.168.1.23 58168
+2021-02-23 01:34:55 User input login: user2
+2021-02-23 01:34:55 User input password: pass2
+2021-02-23 01:34:55 Logging user: user2
+ 2021-02-23 01:34:55 Logged from 192.168.1.23:58170
+
+2021-02-23 01:37:25 START PRACY SERVERA
+
+2021-02-23 01:37:25 Nawiazanie polaczenia z klientem: 108.127.0.0 4119
+2021-02-23 01:37:25 User input login: user1
+2021-02-23 01:37:25 User input password: pass1
+2021-02-23 01:37:25 Logging user: user1
+ 2021-02-23 01:37:25 Logged from 192.168.1.23:58172
+
+2021-02-23 01:37:25 user1 uruchomil pomoc: 192.168.1.23 58172
+
+2021-02-23 01:37:25 Wylogowano user1: 192.168.1.23 58172
+
+2021-02-23 01:39:26 START PRACY SERVERA
+
+2021-02-23 01:39:26 Nawiazanie polaczenia z klientem: 59.127.0.0 9069
+2021-02-23 01:39:26 User input login: user1
+2021-02-23 01:39:26 User input password: pass1
+2021-02-23 01:39:26 Logging user: user1
+ 2021-02-23 01:39:26 Logged from 192.168.1.23:58176
+
+2021-02-23 01:42:51 START PRACY SERVERA
+
+2021-02-23 01:42:51 Nawiazanie polaczenia z klientem: 53.127.0.0 55043
+2021-02-23 01:42:51 User input login: user1
+2021-02-23 01:42:51 User input password: pass1
+2021-02-23 01:42:51 Logging user: user1
+ 2021-02-23 01:42:51 Logged from 192.168.1.23:58178
+
+2021-02-23 01:50:40 START PRACY SERVERA
+
+2021-02-23 01:50:40 Nawiazanie polaczenia z klientem: 40.127.0.0 56783
+2021-02-23 01:50:40 User input login: user1
+2021-02-23 01:50:40 User input password: pass1
+2021-02-23 01:50:40 Logging user: user1
+ 2021-02-23 01:50:40 Logged from 192.168.1.23:58182
+
+2021-02-23 01:52:47 START PRACY SERVERA
+
+2021-02-23 01:52:47 Nawiazanie polaczenia z klientem: 22.127.0.0 41741
+
+2021-02-23 01:53:58 START PRACY SERVERA
+
+2021-02-23 01:53:58 Nawiazanie polaczenia z klientem: 192.127.0.0 5608
+2021-02-23 01:53:58 User input login: user1
+2021-02-23 01:53:58 User input password: pass1
+2021-02-23 01:53:58 Logging user: user1
+ 2021-02-23 01:53:58 Logged from 192.168.1.23:58188
+
+2021-02-23 01:53:58 Wylogowano user1: 192.168.1.23 58188
+
+2021-02-23 01:56:41 START PRACY SERVERA
+
+2021-02-23 01:56:41 Nawiazanie polaczenia z klientem: 19.127.0.0 42521
+2021-02-23 01:56:41 User input login: user1
+2021-02-23 01:56:41 User input password: pass1
+2021-02-23 01:56:41 Logging user: user1
+ 2021-02-23 01:56:41 Logged from 192.168.1.23:58192
+
+2021-02-23 01:59:09 START PRACY SERVERA
+
+2021-02-23 01:59:09 Nawiazanie polaczenia z klientem: 86.127.0.0 56493
+2021-02-23 01:59:09 User input login: user1
+2021-02-23 01:59:09 User input password: pass1
+2021-02-23 01:59:09 Logging user: user1
+ 2021-02-23 01:59:09 Logged from 192.168.1.23:58194
+
+2021-02-23 02:02:00 START PRACY SERVERA
+
+2021-02-23 02:02:00 Nawiazanie polaczenia z klientem: 37.127.0.0 3222
+
+2021-02-23 02:02:08 START PRACY SERVERA
+
+2021-02-23 02:02:08 Nawiazanie polaczenia z klientem: 37.127.0.0 4203
+2021-02-23 02:02:08 User input login: user1
+2021-02-23 02:02:08 User input password: pass1
+2021-02-23 02:02:08 Logging user: user1
+ 2021-02-23 02:02:08 Logged from 192.168.1.23:58198
+
+2021-02-23 02:02:08 user1 uruchomil pomoc: 192.168.1.23 58198
+
+2021-02-23 02:02:08 Wylogowano user1: 192.168.1.23 58198
+
+2021-02-23 02:02:08 KONIEC PRACY SERVERA
+2021-02-23 02:02:08 User input login: user4
+2021-02-23 02:02:08 User input password: pass4
+2021-02-23 02:02:08 Logging user: user4
+ 2021-02-23 02:02:08 Logged from 192.168.1.23:58200
+
+2021-02-23 02:02:08 Wylogowano user4: 192.168.1.23 58200
+
+2021-02-23 02:02:08 KONIEC PRACY SERVERA
+
+2021-02-23 02:10:23 START PRACY SERVERA
+
+2021-02-23 02:10:23 Nawiazanie polaczenia z klientem: 148.127.0.0 20559
+2021-02-23 02:10:23 User input login: user1
+2021-02-23 02:10:23 User input password: pass1
+2021-02-23 02:10:23 Logging user: user1
+ 2021-02-23 02:10:23 Logged from 192.168.1.23:58204
+
+2021-02-23 02:10:23 Wylogowano user1: 192.168.1.23 58204
+
+2021-02-23 02:10:23 KONIEC PRACY SERVERA
+2021-02-23 02:10:23 User input login: user1
+2021-02-23 02:10:23 User input password: pass1
+2021-02-23 02:10:23 Logging user: user1
+ 2021-02-23 02:10:23 Logged from 192.168.1.23:58206
+
+2021-02-23 02:11:44 START PRACY SERVERA
+
+2021-02-23 02:11:44 Nawiazanie polaczenia z klientem: 114.127.0.0 61574
+2021-02-23 02:11:44 User input login: user1
+2021-02-23 02:11:44 User input password: pass1
+2021-02-23 02:11:44 Logging user: user1
+ 2021-02-23 02:11:44 Logged from 192.168.1.23:58208
+
+2021-02-23 02:11:44 Wylogowano user1: 192.168.1.23 58208
+
+2021-02-23 02:11:44 KONIEC PRACY SERVERA
+2021-02-23 02:11:44 User input login: user1
+2021-02-23 02:11:44 User input password: pass1
+2021-02-23 02:11:44 Logging user: user1
+ 2021-02-23 02:11:44 Logged from 192.168.1.23:58210
+
+2021-02-23 02:11:44 Wylogowano user1: 192.168.1.23 58210
+
+2021-02-23 02:11:44 KONIEC PRACY SERVERA
+
+2021-02-23 02:30:53 START PRACY SERVERA
+
+2021-02-23 02:30:53 Nawiazanie polaczenia z klientem: 253.127.0.0 4841
+2021-02-23 02:30:53 User input login: user1
+2021-02-23 02:30:53 User input password: pass1
+2021-02-23 02:30:53 Logging user: user1
+ 2021-02-23 02:30:53 Logged from 253.127.0.0:58345
+
+2021-02-23 02:31:51 START PRACY SERVERA
+
+2021-02-23 02:31:51 Nawiazanie polaczenia z klientem: 252.127.0.0 10531
+2021-02-23 02:31:51 User input login: user1
+2021-02-23 02:31:51 User input password: pass1
+2021-02-23 02:31:51 Logging user: user1
+ 2021-02-23 02:31:51 Logged from 252.127.0.0:58147
+
+2021-02-23 02:33:45 START PRACY SERVERA
+
+2021-02-23 02:33:45 Nawiazanie polaczenia z klientem: 252.127.0.0 63236
+2021-02-23 02:33:45 User input login: user1
+2021-02-23 02:33:45 User input password: pass1
+2021-02-23 02:33:45 Logging user: user1
+ 2021-02-23 02:33:45 Logged from 252.127.0.0:58116
+
+2021-02-23 02:36:09 START PRACY SERVERA
+
+2021-02-23 02:36:09 Nawiazanie polaczenia z klientem: 12.127.0.0 36999
+2021-02-23 02:36:09 User input login: user1
+2021-02-23 02:36:09 User input password: pass1
+2021-02-23 02:36:09 Logging user: user1
+ 2021-02-23 02:36:09 Logged from 192.168.1.23:58228
+2021-02-23 02:36:09 user1 sprawdza aktualny stan konta 192.168.1.23:58228
+2021-02-23 02:36:09 user1 wplacil pieniadze na konto 192.168.1.23:58228
+2021-02-23 02:36:09 user1 sprawdza aktualny stan konta 192.168.1.23:58228
+
+2021-02-23 02:36:09 user1 uruchomil pomoc: 192.168.1.23 58228
+
+2021-02-23 02:36:09 Wylogowano user1: 192.168.1.23 58228
+
+2021-02-23 02:36:09 KONIEC PRACY SERVERA
+
+2021-02-23 02:41:28 START PRACY SERVERA
+
+2021-02-23 02:41:28 Nawiazanie polaczenia z klientem: 158.127.0.0 8981
+2021-02-23 02:41:28 User input login: user1
+2021-02-23 02:41:28 User input password: pass1
+2021-02-23 02:41:28 Logging user: user1
+ 2021-02-23 02:41:28 Logged from 192.168.1.23:58232
+
+2021-02-23 02:43:15 START PRACY SERVERA
+
+2021-02-23 02:43:15 Nawiazanie polaczenia z klientem: 68.127.0.0 21184
+2021-02-23 02:43:15 User input login: user1
+2021-02-23 02:43:15 User input password: pass1
+2021-02-23 02:43:15 Logging user: user1
+ 2021-02-23 02:43:15 Logged from 192.168.1.23:58234
+2021-02-23 02:43:15 User input login: user1
+2021-02-23 02:43:15 User input password: pass1
+2021-02-23 02:43:15 Logging user: user1
+ 2021-02-23 02:43:15 Logged from 192.168.1.23:58236
+
+2021-02-23 02:43:15 Wylogowano user1: 192.168.1.23 58236
+
+2021-02-23 02:43:15 KONIEC PRACY SERVERA
+
+2021-02-23 02:45:08 START PRACY SERVERA
+
+2021-02-23 02:45:08 Nawiazanie polaczenia z klientem: 247.127.0.0 5331
+2021-02-23 02:45:08 User input login: user4
+2021-02-23 02:45:08 User input password: pass4
+2021-02-23 02:45:08 Logging user: user4
+ 2021-02-23 02:45:08 Logged from 192.168.1.23:58238
+2021-02-23 02:45:08 user4 sprawdza aktualny stan konta 192.168.1.23:58238
+2021-02-23 02:45:08 user4 wplacil pieniadze na konto 192.168.1.23:58238
+2021-02-23 02:45:08 user4 sprawdza aktualny stan konta 192.168.1.23:58238
+2021-02-23 02:45:08 user4 wyplacil pieniadze z konta 192.168.1.23:58238
+2021-02-23 02:45:08 user4 sprawdza aktualny stan konta 192.168.1.23:58238
+
+2021-02-23 02:45:08 user4 uruchomil pomoc: 192.168.1.23 58238
+
+2021-02-23 02:45:08 Wylogowano user4: 192.168.1.23 58238
+
+2021-02-23 02:45:08 KONIEC PRACY SERVERA

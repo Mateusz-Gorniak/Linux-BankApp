@@ -27,10 +27,12 @@
 int main() {
 
     //zmienne pomocnicze
-    char systemCashRequest[] ="account_state";
+    char systemCashRequest[] = "account_state";
     char imie[30];
     char nazwisko[30];
     float saldo;
+    char siano_plus[10];
+    char siano_minus[10];
     char path[40];
     FILE *file;
     char helpbuffer[255];
@@ -44,11 +46,11 @@ int main() {
     }
 
     //socket program
-    int L=0; // flaga logged
+    int L = 0; // flaga logged
     int clientSocket, ret;//uchwyt do socketa
     struct sockaddr_in serverAddr;
     char buffer[1024];
-    
+
 
     clientSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (clientSocket < 0) {
@@ -76,7 +78,7 @@ int main() {
     printf("APLIKACJI BANKOWEJ PO ZALOGOWANIU WPISZ 'help'\n");
     printf("-----------------------------------------------------\n");
 
-    while (L!=1) {
+    while (L != 1) {
         printf("Logowanie\n");
         printf("LOGIN:\n");
         char login[20];
@@ -90,15 +92,14 @@ int main() {
 
         bzero(buffer, sizeof(buffer));
         sleep(1);
-        read(clientSocket, buffer,sizeof(buffer));
+        read(clientSocket, buffer, sizeof(buffer));
 
         if ((strcmp(buffer, "Log") == 0)) {
-            L=1;
+            L = 1;
             break;;
-        }
-        else{
-            printf("%s\n","Login lub haslo zostaly wprowadzone niepoprawnie");
-            printf("%s\n","SPROBUJ JESZCZE RAZ");
+        } else {
+            printf("%s\n", "Login lub haslo zostaly wprowadzone niepoprawnie");
+            printf("%s\n", "SPROBUJ JESZCZE RAZ");
             clear();
             sleep(1);
 
@@ -106,50 +107,88 @@ int main() {
 
     }
     send(clientSocket, systemCashRequest, strlen(systemCashRequest), 0);
-    read(clientSocket,imie,sizeof (imie));
-    read(clientSocket,nazwisko,sizeof (nazwisko));
-    read(clientSocket,&saldo,sizeof(float));
+    read(clientSocket, imie, sizeof(imie));
+    read(clientSocket, nazwisko, sizeof(nazwisko));
+    read(clientSocket, &saldo, sizeof(float));
 
     clear();
     printf("%s\n", "SZACH-MAT BANK");
-    printf("\n\nUZYTKOWNIK: %s %s",imie,nazwisko);
-    printf("\nSTAN KONTA: %g PLN",saldo);
+    printf("\n\nUZYTKOWNIK: %s %s", imie, nazwisko);
+    printf("\nSTAN KONTA: %g PLN", saldo);
 
     puts("\nDYSPOZYCJE:");
-    puts("1 - STAN KONTA");
-    puts("2 - WPLAC PIENIADZE");
-    puts("3 - WYPLAC PIENIADZE");
+    puts("status - STAN KONTA");
+    puts("siano+ - WPLAC PIENIADZE");
+    puts("siano- - WYPLAC PIENIADZE");
     puts("help - POMOC UZYTKOWNIKA");
     puts("exit - WYLOGUJ SIE\n");
     puts("WYBOR OPERACJI: \n");
-    
+
     while (clientSocket) {
         printf("$>:");
         scanf("%s", buffer);
         send(clientSocket, buffer, strlen(buffer), 0);
-        if (strcmp(buffer, "exit") == 0) {
-            close(clientSocket);
-            printf("[-]Disconnected from server.\n");
-            exit(1);
-        }
-        if(strcmp(buffer,"help") == 0){
-            sprintf(path, "%s%s", Path,"/help.txt");
-            //printf("%s",path);
-            //printf("%s",Path);
-            file=fopen(path,"r");
-            if (file) {
-                while(fgets(helpbuffer,255,file)>0) {
-                    printf("%s", helpbuffer);
-                }
-            } else {
-                printf("%s\n", "Nie otworzono pliku z pomoca");
+        if ((strcmp(buffer, "status") == 0) || (strcmp(buffer, "siano+") == 0) || (strcmp(buffer, "siano-") == 0) ||
+        (strcmp(buffer, "help") == 0) || (strcmp(buffer, "exit") == 0)) {
+
+            //obsluga sprawdzenia stanu konta
+            if ((strcmp(buffer, "status") == 0)) {
+                sleep(1);
+                printf("Aktualny stan konta uzytkownika -> %g\n",saldo);
             }
-            printf("\n\n");
-            fclose(file);
-            bzero(helpbuffer,sizeof(helpbuffer));
+
+            //obsluga wplacenia siana
+            if (strcmp(buffer, "siano+") == 0) {
+
+                printf("Money[$->]");
+                bzero(buffer, sizeof(buffer));
+                scanf("%s", siano_plus);
+                saldo = saldo + atof(siano_plus);
+                sprintf(buffer, "%g", saldo);
+                send(clientSocket, buffer, strlen(buffer), 0);
+                sleep(1);
+            }
+
+            //obsluga wyplacenia siana
+            if (strcmp(buffer, "siano-") == 0) {
+
+                printf("Money[$->]");
+                bzero(buffer, sizeof(buffer));
+                scanf("%s", siano_plus);
+                saldo = saldo - atof(siano_plus);
+                sprintf(buffer, "%g", saldo);
+                send(clientSocket, buffer, strlen(buffer), 0);
+                sleep(1);
+            }
+
+            if (strcmp(buffer, "exit") == 0) {
+                close(clientSocket);
+                printf("[-]Disconnected from server.\n");
+                exit(1);
+            }
+            if (strcmp(buffer, "help") == 0) {
+                sprintf(path, "%s%s", Path, "/help.txt");
+                //printf("%s",path);
+                //printf("%s",Path);
+                file = fopen(path, "r");
+                if (file) {
+                    while (fgets(helpbuffer, 255, file) > 0) {
+                        printf("%s", helpbuffer);
+                    }
+                } else {
+                    printf("%s\n", "Nie otworzono pliku z pomoca");
+                }
+                printf("\n\n");
+                fclose(file);
+                bzero(helpbuffer, sizeof(helpbuffer));
+            }
         }
-        bzero(buffer,sizeof(buffer));
-        read(clientSocket, buffer,sizeof(buffer));
+        else
+        {
+            printf("[?]Command not detected.\n");
+        }
+        bzero(buffer, sizeof(buffer));
+        read(clientSocket, buffer, sizeof(buffer));
         if (strcmp(buffer, "Operation was successful") == 0) {
             printf("[+]Operation was successful.\n");
         }
@@ -162,5 +201,3 @@ int main() {
     close(clientSocket);
     return 0;
 }
-
-

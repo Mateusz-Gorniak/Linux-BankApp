@@ -5,11 +5,15 @@ oraz stan konta.
 2. Aby wprowadzic jakies zmiany na koncie nalezy podac po znaku zachety 
 $> odpowiednia instrukcje.Dyspozycje jakie mozna wykonac w trakcie aktywnej sesji: 
 
-1 - STAN KONTA;
-2 - WPLAC PIENIADZE;
-3 - WYPLAC PIENIADZE
-help - POMOC UZYTKOWNIKA;
-exit - WYLOGUJ SIE;
+status - STAN KONTA
+siano+ - WPLAC PIENIADZE
+siano- - WYPLAC PIENIADZE
+help - POMOC UZYTKOWNIKA
+exit - WYLOGUJ SIE
+
+Gdy pieniadze maja byc wplacane po wpisaniu polecenia siano+ po znaku zachety
+ukazany zostanie linijke nizej nowy znak zachety: Money[$->]
+Nalezy wowczas podac kwote. Patrz przyklad Money[$->]200[ENTER]
 
 Nie mozna wyplacic wiecej srodkow niz jest to mozliwe. 
 Po wplaceniu pieniedzy wystarczy wybrac polecenie 1, wowczas stan konta 
